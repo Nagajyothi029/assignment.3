@@ -1,34 +1,42 @@
 
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
-%
+\usepackage[utf8]{inputenc}
+
+
+
 \usepackage{setspace}
 \usepackage{gensymb}
+
 \singlespacing
+
+
 \usepackage[cmex10]{amsmath}
-\usepackage{siunitx}
+
 \usepackage{amsthm}
 
 \usepackage{mathrsfs}
-
 \usepackage{txfonts}
 \usepackage{stfloats}
-
-\usepackage{steinmetz}
+\usepackage{bm}
 \usepackage{cite}
 \usepackage{cases}
 \usepackage{subfig}
+
 \usepackage{longtable}
 \usepackage{multirow}
+
 \usepackage{enumitem}
 \usepackage{mathtools}
+\usepackage{steinmetz}
 \usepackage{tikz}
 \usepackage{circuitikz}
 \usepackage{verbatim}
 \usepackage{tfrupee}
 \usepackage[breaklinks=true]{hyperref}
-\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
 \usetikzlibrary{calc,math}
-\usetikzlibrary{fadings}
 \usepackage{listings}
     \usepackage{color}                                            %%
     \usepackage{array}                                            %%
@@ -37,10 +45,10 @@
     \usepackage{multirow}                                         %%
     \usepackage{hhline}                                           %%
     \usepackage{ifthen}                                           %%
-  %optionally (for landscape tables embedded in another document): %%
     \usepackage{lscape}     
 \usepackage{multicol}
 \usepackage{chngcntr}
+
 \DeclareMathOperator*{\Res}{Res}
 
 \renewcommand\thesection{\arabic{section}}
@@ -50,6 +58,7 @@
 \renewcommand\thesectiondis{\arabic{section}}
 \renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
 \renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
 
 \hyphenation{op-tical net-works semi-conduc-tor}
 \def\inputGnumericTable{}                                 %%
@@ -61,7 +70,6 @@ breaklines=true,
 columns=fullflexible
 }
 \begin{document}
-%
 
 
 \newtheorem{theorem}{Theorem}[section]
@@ -71,6 +79,7 @@ columns=fullflexible
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{example}{Example}[section]
 \newtheorem{definition}[problem]{Definition}
+
 \newcommand{\BEQA}{\begin{eqnarray}}
 \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
@@ -91,7 +100,6 @@ columns=fullflexible
 \newtheorem{rem}{Remark}
 \newcommand{\sgn}{\mathop{\mathrm{sgn}}}
 \providecommand{\abs}[1]{\left\vert#1\right\vert}
-\providecommand{\abs}[1]{\lvert#1\rvert} 
 \providecommand{\res}[1]{\Res\displaylimits_{#1}} 
 \providecommand{\norm}[1]{\left\lVert#1\right\rVert}
 %\providecommand{\norm}[1]{\lVert#1\rVert}
@@ -119,37 +127,35 @@ columns=fullflexible
      \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
-\title{ASSIGNMENT-3}
-\author{Nagajyothi}
+\title{Assignment 7}
+\author{V.Nagajyothi}
 \maketitle
 \newpage
 \bigskip
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
+Download all python codes from 
+\begin{lstlisting}p
+https://github.com/nagajyothi/ASSIGNMENT7/Assignment7.py
+\end{lstlisting}
 %
-\section{QUESTION No-2.19 (Linear forms)}
-Find the equation of the parallel to the line  $\vec{} = \myvec{3 &-4}\vec{x}=2$  
-and passing through the point $\myvec{2\\3}$
+and latex-tikz codes from 
 %
-\section*{Solution}
-the direction vector is $\vec{m} = \myvec{1\\ \frac{3}{4}}$ 
-hence the normal vector is
- \begin{align}
-   \vec{n} &= \myvec{0&-1\\1&0}\vec{m}\\
-   &=\myvec{\frac{-3}{4}\\1}
- \end{align}
-Equation of the line in terms of the normal vector is obtained as
+\begin{lstlisting}
+https://github.com/nagajyothi/ASSIGNMENT7/main.tex
+\end{lstlisting}
+%
+\section{Question No.VECTORS-2.7}
+Find the area of triangle having the points 
+$\vec{A} = \myvec{1 \\ 1 \\ 1},\vec{B}=\myvec{1 \\ 2\\3}$,and $\vec{C}=\myvec{2\\3\\1}$
+as it's vertices
+%
+\section{SOLUTION}
+The area of a triangle using the vector product is obtained as
 \begin{align}
-\vec{n}^T\brak{\vec{x}-\vec{A}} = 0\\
-\implies \myvec{\frac{-3}{4}&1}\vec{x}=\frac{3}{2}\\
-\implies \myvec{{-3}&4}\vec{x}=6
+\frac{1}{2}\norm{\myvec{\vec {B-A}}\times \myvec{\vec  {C-A}}}\\
+\vec{B-A}=\myvec{1\\2\\3}-\myvec{1\\1\\1} = \myvec{0\\1\\2}\\
+\vec{C-A}=\myvec{2\\3\\1}-\myvec{1\\1\\1}=\myvec{1\\2\\0}\\
+\frac{1}{2}\norm{\myvec{\vec{B-A}}\times\myvec{\vec{C-A}}}\\ \frac{1}{2}\norm{\myvec{0\\1\\2}\times \myvec{1\\2\\0}}\\=\vec{1}
 \end{align}
-Plot of the parallel
-\numberwithin{figure}{section}
-\begin{figure}[ht]
-\centering
-\includegraphics[width=\columnwidth]{figure. (3) (2).png}
-\caption{figure.(3)(2).png}
-\label{Plot of the parallel}
-\end{figure}
 \end{document}
